@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+  Sticky Notes List - {{page_title}}
+{% endblock %}
+{% block content %}
+  <h2>
+    {{page_title}}
+  </h2>
+  <a href="{% url 'posts:sticky_note_create' %}">Create a new Note</a>
+  <div class="note-grid">
+    {% for note, color in notes_with_colors %}
+      <div class ="note-card" style="background-color: {{ color }}">
+        <h3> {{ note.title }} </h3>
+        <p> {{ note.content|truncatechars:100 }} </p>
+        <a href="{% url 'posts:sticky_note_detail' pk=note.pk %}">View</a>
+        <a href="{% url 'posts:sticky_note_update' pk=note.pk %}">Edit</a>
+        <a href="{% url 'posts:sticky_note_delete' pk=note.pk %}">Delete</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+    
+    

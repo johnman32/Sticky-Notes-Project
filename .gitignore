@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+
+# Python cache and bytecode
+__pycache__/
+*.pyc
+
+# Django database
+db.sqlite3
+
+# Environment variables
+.env
+
+# Django static admin files
+static/admin/
+
+# VS Code settings (optional)
+.vscode/
+
+# macOS system files (optional)
+.DS_Store
